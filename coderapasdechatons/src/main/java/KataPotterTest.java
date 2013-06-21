@@ -22,5 +22,15 @@ public class KataPotterTest {
 		double price = subject.getPrice(Arrays.asList("1", "1"));
 		assertThat(price,equalTo(16.0));
 	}
+	
+	@Test
+	public void testDifferentBook(){
+		KataPotter subject = new KataPotter();
+		
+		double price = subject.getPrice(Arrays.asList("1", "2"));
+		assertThat(price,equalTo(16.0 * 0.95));
+	}
+	
+	
 
 }
